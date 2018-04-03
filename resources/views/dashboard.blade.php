@@ -26,7 +26,14 @@
                                 <tr>
                                     <td>{{ $listing->name }}</td>
                                     <td><a class="btn btn-secondary float-right" href="/listings/{{$listing->id}}/edit">Edit</a></td>
-                                    <td></td>
+                                    <td>
+                                        {!! Form::open(['action' => ['ListingsController@destroy', $listing->id], 'method' => 'DELETE', 'class' => 'float-left', 'onsubmit' => 'return confirm("Are you sure?")']) !!}
+                                            {{ Form::Submit('Delete', ['class' => 'btn btn-danger']) }}
+
+                                            <!-- This is not used because Laravel Collective does the spoofing automatically. -->
+                                            <!-- { Form:hidden('_method' => 'DELETE') }     // A set of {}'s omitted for the commenting.' -->
+                                        {!! Form::close() !!}
+                                    </td>
                                 </tr>
                             @endforeach
                         </tr>
