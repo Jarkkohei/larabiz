@@ -8,11 +8,9 @@
 
 
 @if(session('success'))
-    @foreach($errors->all() as $error)
-        <div class="alert alert-success">
-            {{ session('success') }}
-        </div>
-    @endforeach
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
 @endif
 
 

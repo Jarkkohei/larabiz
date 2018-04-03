@@ -7,11 +7,13 @@
             <div class="card-header">Dashboard <span class="float-right"><a href="/listings/create" class="btn btn-success btn-sm">Add Listing</a></span></div>
 
             <div class="card-body">
+                {{--
                 @if (session('status'))
                     <div class="alert alert-success">
                         {{ session('status') }}
                     </div>
                 @endif
+                --}}
 
                 <h3>Your Listings</h3>
                 @if(count($listings) > 0)
@@ -23,7 +25,7 @@
                             @foreach($listings as $listing)
                                 <tr>
                                     <td>{{ $listing->name }}</td>
-                                    <td></td>
+                                    <td><a class="btn btn-secondary float-right" href="/listings/{{$listing->id}}/edit">Edit</a></td>
                                     <td></td>
                                 </tr>
                             @endforeach

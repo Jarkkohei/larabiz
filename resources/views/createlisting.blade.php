@@ -4,14 +4,16 @@
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header">Create Listing</div>
+            <div class="card-header">Create Listing <a href="/dashboard" class="float-right btn btn-secondary btn-sm">Go Back</a></div>
 
             <div class="card-body">
+                {{--
                 @if (session('status'))
                     <div class="alert alert-success">
                         {{ session('status') }}
                     </div>
                 @endif
+                --}}
 
                 {!! Form::open(['action' => 'ListingsController@store', 'method' => 'POST']) !!}
                     {{ Form::bsText('name', '', ['placeholder' => 'Company Name']) }}
